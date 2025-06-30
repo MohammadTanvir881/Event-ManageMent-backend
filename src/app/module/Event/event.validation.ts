@@ -24,6 +24,43 @@ export const createEventValidationSchema = z.object({
   }),
 });
 
+export const updateEventValidationSchema = z.object({
+  body: z.object({
+    eventTitle: z
+      .string({
+        required_error: "Event title is required",
+      })
+      .optional(),
+    authorName: z
+      .string({
+        required_error: "Author name is required",
+      })
+      .optional(),
+    eventDate: z
+      .string({
+        required_error: "Event date is required",
+      })
+      .optional(),
+    eventTime: z
+      .string({
+        required_error: "Event time is required",
+      })
+      .optional(),
+    eventLocation: z
+      .string({
+        required_error: "Event location is required",
+      })
+      .optional(),
+    eventDescription: z
+      .string({
+        required_error: "Event description is required",
+      })
+      .optional(),
+    attendeeCount: z.number().optional().default(0),
+  }),
+});
+
 export const eventValidation = {
   createEventValidationSchema,
+  updateEventValidationSchema,
 };

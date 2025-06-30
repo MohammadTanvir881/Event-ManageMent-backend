@@ -26,7 +26,7 @@ const moduleRoutes = [
     route: UserRouter,
   },
   {
-    path: "/event",
+    path: "/events",
     route: EventRouter,
   },
   {
