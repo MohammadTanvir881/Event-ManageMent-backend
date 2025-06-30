@@ -23,9 +23,16 @@ const updateEventIntoDb = async (eventId: string, eventData: any) => {
   return result;
 };
 
+const deleteEventFromDb = async (eventId: string) => {
+  const result = await Event.findByIdAndDelete(eventId);
+  return result;
+};
+
+
 export const eventServices = {
   createEventIntoDb,
   getAllEventsFromDb,
   getSingleEventFromDb,
   updateEventIntoDb,
+  deleteEventFromDb,
 };

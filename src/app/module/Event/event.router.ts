@@ -24,4 +24,7 @@ route.patch(
   eventController.updateEvent
 );
 
+// delete event by id
+route.delete("/:eventId", eventController.deleteEvent);
+
 export const EventRouter = route;

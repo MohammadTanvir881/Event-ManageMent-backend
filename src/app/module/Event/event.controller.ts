@@ -61,9 +61,29 @@ const updateEvent = catchAsync(async (req, res): Promise<void> => {
   });
 });
 
+const deleteEvent = catchAsync(async (req, res): Promise<void> => {
+  const { eventId } = req.params;
+  const result = await eventServices.deleteEventFromDb(eventId);
+  if (!result) {
+    res.status(404).json({
+      success: false,
+      message: "Event not found",
+      statusCode: 404,
+    });
+    return;
+  }
+  res.status(200).json({
+    success: true,
+    message: "Event deleted successfully",
+    statusCode: 200,
+    data: result,
+  });
+});
+
 export const eventController = {
   createEvent,
   getAllEvents,
   getSingleEvent,
   updateEvent,
+  deleteEvent,
 };
