@@ -4,6 +4,7 @@ import orderRouter from "../orders/order.routes";
 import { AuthRoute } from "../Auth/auth.route";
 import { UserRouter } from "../Users/user.routes";
 import { MegazineRouter } from "../Megazine/megazine.router";
+import { EventRouter } from "../Event/event.router";
 
 const router = Router();
 
@@ -24,7 +25,11 @@ const moduleRoutes = [
     path: "/users",
     route: UserRouter,
   },
-    {
+  {
+    path: "/event",
+    route: EventRouter,
+  },
+  {
     path: "/megazine",
     route: MegazineRouter,
   },
