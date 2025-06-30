@@ -1,7 +1,6 @@
 import { Schema, model } from "mongoose";
 import { IEvent } from "./event.interface";
 
-
 const eventSchema = new Schema<IEvent>(
   {
     eventTitle: {
@@ -9,6 +8,10 @@ const eventSchema = new Schema<IEvent>(
       required: true,
     },
     authorName: {
+      type: String,
+      required: true,
+    },
+    authorEmail: {
       type: String,
       required: true,
     },
