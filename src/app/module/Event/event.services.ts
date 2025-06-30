@@ -6,7 +6,7 @@ const createEventIntoDb = async (eventData: any) => {
 };
 
 const getAllEventsFromDb = async () => {
-  const result = await Event.find();
+  const result = await Event.find().sort({createdAt: -1});
   return result;
 };
 
@@ -27,6 +27,8 @@ const deleteEventFromDb = async (eventId: string) => {
   const result = await Event.findByIdAndDelete(eventId);
   return result;
 };
+
+
 
 
 export const eventServices = {

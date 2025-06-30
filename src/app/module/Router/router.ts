@@ -5,6 +5,7 @@ import { AuthRoute } from "../Auth/auth.route";
 import { UserRouter } from "../Users/user.routes";
 import { MegazineRouter } from "../Megazine/megazine.router";
 import { EventRouter } from "../Event/event.router";
+import { JoinedEventRouter } from "../JoinedEvents/JoinEvent.route";
 
 const router = Router();
 
@@ -28,6 +29,10 @@ const moduleRoutes = [
   {
     path: "/events",
     route: EventRouter,
+  },
+  {
+    path: "/joined",
+    route: JoinedEventRouter,
   },
   {
     path: "/megazine",
